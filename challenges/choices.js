@@ -4,7 +4,18 @@ debugger; // step through loading & testing
 // first argument is any string
 // second argument is what to do to that string
 function choices(str, option) {
-
+  if (option === 'big'){
+    return str.toUpperCase();
+  } 
+  else if (option === 'small'){
+    return str.toLowerCase();
+  }
+  else if (option === 'slim'){
+    return str.trim();
+  }
+  else {
+    return 'invalid option';
+  }
 }
 
 // declare and evaluate test cases for choices
@@ -39,7 +50,12 @@ function choicesHandler() {
   debugger; // step through user actions
 
   // read & process user input
+  const userText = prompt('Enter Your Text');
+  const option = prompt('Write big,small or slim and change your text');
 
+  const result = choices(userText, option.trim());
+
+  alert(result);
   // execute core logic
 
   // display result to user
